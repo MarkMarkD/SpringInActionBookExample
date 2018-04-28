@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+  xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/data/mongo
+    http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd
+    http://www.directwebremoting.org/schema/spring-dwr
+    http://www.directwebremoting.org/schema/spring-dwr-3.0.xsd">
+
+<!--    <context:annotation-config/>-->
+    <context:component-scan base-package="ru.transasia.myspring1"/>
+    
+    <bean id="duke"     
+        class="ru.transasia.myspring1.Juggler" > 
+        <constructor-arg value="15" />
+    </bean>
+    
+    <bean id="sonnet29"
+        class="ru.transasia.myspring1.Sonnet29" />
+    
+    <bean id="poeticDuke"     
+        class="ru.transasia.myspring1.PoeticJuggler" > 
+        <constructor-arg value="15" />
+        <constructor-arg>
+            <bean class="ru.transasia.myspring1.Sonnet29" />
+        </constructor-arg>
+    </bean>
+    
+    <bean id="kenny"
+        class="ru.transasia.myspring1.Instrumentalist" >
+        <property name="song" value="Jingle Bells" />
+    </bean> 
+
+<!--    <bean id="saxophone"
+        class="ru.transasia.myspring1.Saxophone" />
+    
+    <bean id="kenny2"
+        class="ru.transasia.myspring1.Instrumentalist" >
+        <property name="song" value ="Jingle Bells"/>
+    </bean>-->
+
+<!--    <bean id="piano"
+        class="ru.transasia.myspring1.Piano" />-->
+    
+<!--    <bean id="hank"
+        class="ru.transasia.myspring1.OneManBand" >
+        <property name="instruments">
+            <list>
+                <ref bean="guitar" />
+                <ref bean="cymbal" />
+                <ref bean="harmonica" />
+            </list>
+        </property>
+    </bean>-->
+    
+  <!-- Здесь должны находиться объявления компонентов -->
+</beans>
